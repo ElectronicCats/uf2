@@ -14,11 +14,13 @@ UF2_MAGIC_END    = 0x0AB16F30 # Ditto
 
 families = {
     'SAMD21': 0x68ed2b88,
+    'SAML21': 0x1851780a,
     'SAMD51': 0x55114460,
     'NRF52': 0x1b57745f,
     'STM32F1': 0x5ee21072,
     'STM32F4': 0x57755a57,
     'ATMEGA32': 0x16573617,
+    'MIMXRT10XX': 0x4FB2D5BD
 }
 
 INFO_FILE = "/INFO_UF2.TXT"
@@ -215,7 +217,7 @@ def list_drives():
 def write_file(name, buf):
     with open(name, "wb") as f:
         f.write(buf)
-    print("Wrote %d bytes to %s." % (len(buf), name))
+    print("Wrote %d bytes to %s" % (len(buf), name))
 
 
 def main():
